@@ -61,16 +61,17 @@ for of 的特点
   a、undefined、 null 为无效对象，不会有constructor 
   b、函数的 constructor 是不稳定的，这个主要体现在自定义对象上，当开发者重写 prototype 后，原有的 constructor 引用会丢失，constructor 会默认为 Object
   
-  4、toString()是Object的原型方法，调用该方法，默认返回当前对象的[[Class]]。这是一个内部属性，其格式为[object Xxx],其中Xxx就是对象的类型。
+  4、Object.prototype.toString()
+  toString()是Object的原型方法，调用该方法，默认返回当前对象的[[Class]]。这是一个内部属性，其格式为[object Xxx],其中Xxx就是对象的类型。
      对于Object对象，直接调用toString()就能返回[object Object],而对于其他对象，则需要通过call、apply来调用才能返回正确的类型信息。
-     console.log(Object.prototype.toString.call(123));      		  //[object Number]
-		 console.log(Object.prototype.toString.call('123'));    		  //[object String]
-		 console.log(Object.prototype.toString.call(undefined));     //[object Undefined]
-		 console.log(Object.prototype.toString.call(true));    		  //[object Boolean]
-		 console.log(Object.prototype.toString.call({}));    			  //[object Object]
-		 console.log(Object.prototype.toString.call([]));    				//[object Array]
-		 console.log(Object.prototype.toString.call(function(){}));  //[object Function]
-		 console.log(Object.prototype.toString.call(null));    			//[[object Null]]
+console.log(Object.prototype.toString.call(123));             //[object Number]
+console.log(Object.prototype.toString.call('123'));           //[object String]
+console.log(Object.prototype.toString.call(undefined));       //[object Undefined]
+console.log(Object.prototype.toString.call(true));            //[object Boolean]
+console.log(Object.prototype.toString.call({}));              //[object Object]
+console.log(Object.prototype.toString.call([]));              //[object Array]
+console.log(Object.prototype.toString.call(function(){}));    //[object Function]
+console.log(Object.prototype.toString.call(null));            //[[object Null]]
    
 ```
 
