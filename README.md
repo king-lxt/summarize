@@ -63,14 +63,14 @@ for of 的特点
   
   4、toString()是Object的原型方法，调用该方法，默认返回当前对象的[[Class]]。这是一个内部属性，其格式为[object Xxx],其中Xxx就是对象的类型。
      对于Object对象，直接调用toString()就能返回[object Object],而对于其他对象，则需要通过call、apply来调用才能返回正确的类型信息。
-    console.log(Object.prototype.toString.call(123));      		  //[object Number]
-		console.log(Object.prototype.toString.call('123'));    		  //[object String]
-		console.log(Object.prototype.toString.call(undefined));     //[object Undefined]
-		console.log(Object.prototype.toString.call(true));    		  //[object Boolean]
-		console.log(Object.prototype.toString.call({}));    			  //[object Object]
-		console.log(Object.prototype.toString.call([]));    				//[object Array]
-		console.log(Object.prototype.toString.call(function(){}));  //[object Function]
-		console.log(Object.prototype.toString.call(null));    			//[[object Null]]
+     console.log(Object.prototype.toString.call(123));      		  //[object Number]
+		 console.log(Object.prototype.toString.call('123'));    		  //[object String]
+		 console.log(Object.prototype.toString.call(undefined));     //[object Undefined]
+		 console.log(Object.prototype.toString.call(true));    		  //[object Boolean]
+		 console.log(Object.prototype.toString.call({}));    			  //[object Object]
+		 console.log(Object.prototype.toString.call([]));    				//[object Array]
+		 console.log(Object.prototype.toString.call(function(){}));  //[object Function]
+		 console.log(Object.prototype.toString.call(null));    			//[[object Null]]
    
 ```
 
