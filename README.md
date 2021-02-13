@@ -1,3 +1,5 @@
+
+
 ### 1、For in 和 for of的区别
 
 ```
@@ -87,3 +89,6 @@ console.log(Object.prototype.toString.call(null));            //[[object Null]]
 
 所以说，精度丢失并不是语言的问题，而是浮点数存储本身固有的缺陷。
 ```
+
+
+
