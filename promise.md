@@ -142,7 +142,8 @@ const resolvePromise = (promise2, promiseOrNot, resolve, reject) => {
             if (typeof then === 'function') {
                 // 认为是Promise
                 then.call(promiseOrNot, y => {
-                    resolve(y);
+                     // 返回的有可能还是promise
+                    resolvePromise(promise2, y, resolve, reject);
                 }, r => {
                     nreject(r);
                 });
