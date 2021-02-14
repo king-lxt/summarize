@@ -73,3 +73,128 @@ add.bind(sub, 5, 3); // 这时，并不会返回 8
 add.bind(sub, 5, 3)(); // 调用后，返回 8
 ```
 
+
+
+
+
+Call的实现
+
+```
+var obj = {
+    value: '1'
+}
+
+function fn(name, age) {
+    this.name = name;
+    this.age = age;
+    this.say = function() {
+        alert(this.name + this.age)
+    }
+}
+// ========================================================================
+
+Function.prototype.call2 = function(context) {
+    var context = context || window;
+    context.fn = this;
+    var args = [];
+    var result;
+    for (var i = 1; i < arguments.length; i++) {
+        args.push(`arguments[${i}]`)
+    }
+    result = eval(`context.fn(${args})`)
+    delete context.fn;
+    return result;
+}
+
+或者
+
+Function.prototype.call = function (context, ...args) {
+  context = context || window;
+  
+  const fnSymbol = Symbol("fn");
+  context[fnSymbol] = this;
+  
+  context[fnSymbol](...args);
+  delete context[fnSymbol];
+}
+
+// ========================================================================
+
+fn.call2(obj, 'biao', 20);
+obj.say()
+```
+
+Apply
+
+```
+var obj = {
+    value: '1'
+}
+
+function fn(name, age) {
+    this.name = name;
+    this.age = age;
+    this.say = function() {
+        alert(this.name + this.age)
+    }
+}
+
+// ========================================================================
+Function.prototype.apply2 = function(context,arr){
+    var context = Object(context) || window;
+    context.fn = this;
+    var args = [];
+    var result;
+    if(!arr){
+        result = context.fn()
+    }else{
+        for(var i=0;i<arr.length;i++){
+            args.push(`arr[${i}]`)
+        }
+        result = eval(`context.fn(${args})`)
+    }
+    delete context.fn;
+    return result;
+}
+
+或者
+
+Function.prototype.apply = function (context, argsArr) {
+  context = context || window;
+  
+  const fnSymbol = Symbol("fn");
+  context[fnSymbol] = this;
+  
+  context[fnSymbol](...argsArr);
+  delete context[fnSymbol];
+}
+
+// ========================================================================
+
+fn.apply2(obj, ['biao', 20])
+obj.say()
+```
+
+
+
+bind
+
+
+
+```
+
+Function.prototype.bind = function (context, ...args) {
+  context = context || window;
+  const fnSymbol = Symbol("fn");
+  context[fnSymbol] = this;
+  
+  return function (..._args) {
+    args = args.concat(_args);
+    
+    context[fnSymbol](...args);
+    delete context[fnSymbol];   
+  }
+}
+ 
+```
+
