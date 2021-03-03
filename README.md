@@ -1,3 +1,5 @@
+
+
 ### 1、For in 和 for of的区别
 
 ```
@@ -86,25 +88,5 @@ console.log(Object.prototype.toString.call(null));            //[[object Null]]
 0.000110011001100110011（0011无限循环）……
 
 所以说，精度丢失并不是语言的问题，而是浮点数存储本身固有的缺陷。
-```
-
-### 6、数组去重
-
-```
- var arr = [1, 2, 3, 1, 2, 3, 6];
- const newArr = [];
- arr.filter((v, i, arr) => {
-   if (arr.indexOf(v) === i) {
-   newArr.push(v)
-   }
- })
- console.log(newArr);
-```
-
-```
-// 重用
-
-let arr= [1, 2, 3, 3, 5, 7, 2, 6, 8];
-console.log([...new Set(arr)]);
 ```
 
