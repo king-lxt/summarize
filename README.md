@@ -98,3 +98,51 @@ JavaScript的单线程，与它的用途有关。作为浏览器脚本语言，J
 所以，为了避免复杂性，从一诞生，JavaScript就是单线程，这已经成了这门语言的核心特征，将来也不会改变。
 ```
 
+### 7、为什么 JavaScript 是单线程
+
+```
+1、map【常用】: 遍历数组，返回回调返回值组成的新数组
+
+
+2、forEach【常用】: 无法break，可以用try/catch中throw new Error来停止
+
+
+3、filter【常用】: 过滤
+
+
+4、some: 有一项返回true，则整体为true
+
+
+5、every: 有一项返回false，则整体为false
+
+
+6、join【常用】: 通过指定连接符生成字符串
+
+
+7、push / pop: 末尾推入和弹出，改变原数组， push 返回数组长度, pop 返回原数组最后一项；
+
+
+8、unshift / shift: 头部推入和弹出，改变原数组，unshift 返回数组长度，shift 返回原数组第一项 ；
+
+
+9、sort(fn) / reverse【常用】: 排序与反转，改变原数组
+
+
+10、concat【常用】: 连接数组，不影响原数组， 浅拷贝
+
+
+11、slice(start, end): 返回截断后的新数组，不改变原数组
+
+
+12、splice(start, number, value...)【常用】: 返回删除元素组成的数组，value 为插入项，改变原数组
+
+
+13、indexOf / lastIndexOf(value, fromIndex): 查找数组项，返回对应的下标
+
+
+14、reduce / reduceRight(fn(prev, cur)， defaultPrev): 两两执行，prev 为上次化简函数的return值，cur 为当前值
+    当传入 defaultPrev 时，从第一项开始；
+		当未传入时，则为第二项
+
+```
+
