@@ -157,4 +157,26 @@ JavaScript的单线程，与它的用途有关。作为浏览器脚本语言，J
 6、浏览器显示html页面
 ```
 
-### 
+### 9、什么是BFC
+
+```
+即块级格式化上下文，它是一块独立的渲染区域
+
+BFC的布局规则：
+1、内部的Box会在垂直方向上一个接一个的排列
+2、同一个BFC的两个相邻（上下、左右）的元素margin会发生重叠，同时会取margin的最大值做重叠部分。
+3、BFC就是页面上的一个隔离的独立容器，容器里面的子元素不会影响到外面的元素。
+4、BFC的不会与float box重叠。
+5、计算BFC的高度时，浮动元素也参与计算。
+
+触发BFC：
+1、body根元素或其它包含它的元素
+2、浮动元素 (元素的 float 不是 none)
+3、绝对定位元素 (元素具有 position 为 absolute 或 fixed)
+4、内联块 (元素具有 display: inline-block)
+5、具有overflow 且值不是 visible 的块元素（hidden/auto/scroll)
+除了兼容性问题，用display: flow-root来触发BFC最佳,不会产生任何副作用
+
+```
+
+###
