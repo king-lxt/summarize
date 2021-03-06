@@ -1,4 +1,4 @@
-##### [1、window.onload 和 DOMContentLoaded 的区别](window.onload 和 DOMContentLoaded 的区别)
+##### [1、window.onload 和 DOMContentLoaded 的区别](https://github.com/king-lxt/summarize/issues/1)
 
 ##### [2、数组去重](https://github.com/king-lxt/summarize/issues/2)
 
