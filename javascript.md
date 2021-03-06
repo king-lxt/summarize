@@ -18,3 +18,5 @@
 
 ##### [10、实现柯里化](https://github.com/king-lxt/summarize/issues/10)
 
+##### [11、prototype和__proto__的关系](https://github.com/king-lxt/summarize/issues/11)
+
