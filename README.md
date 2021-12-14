@@ -42,5 +42,10 @@
 
 [21、闭包？什么是作用域？什么是作用域链？](https://github.com/king-lxt/summarize/issues/21)
 
-#### [22、箭头函数和普通函数有啥区别？箭头函数能当构造函数吗？](https://github.com/king-lxt/summarize/issues/22)
+[22、箭头函数和普通函数有啥区别？箭头函数能当构造函数吗？](https://github.com/king-lxt/summarize/issues/22)
 
+[23、深拷贝](https://github.com/king-lxt/summarize/issues/23)
+
+[24、null和undefined的区别](https://github.com/king-lxt/summarize/issues/24)
+
+[25、for...in 和 for...of的去别](https://github.com/king-lxt/summarize/issues/25)
